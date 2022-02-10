@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  testdocker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: testdocker
+    ports:
+      - "8080:8080"
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - '9090:9090'
+    container_name: prometheus1
+    volumes:
+      - ./src/main/resources/prometheus.yaml:/etc/prometheus/prometheus.yml
+      - ./prometheus:/prometheus
+    depends_on:
+      - testdocker
+  grafana:
+    image: grafana/grafana
+    container_name: 'grafana1'
+    ports:
+      - '3000:3000'
+    depends_on:
+      - prometheus1
