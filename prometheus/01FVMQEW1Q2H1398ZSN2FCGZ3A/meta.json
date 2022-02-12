@@ -1,0 +1,38 @@
+{
+	"ulid": "01FVMQEW1Q2H1398ZSN2FCGZ3A",
+	"minTime": 1644494404262,
+	"maxTime": 1644559200000,
+	"stats": {
+		"numSamples": 337800,
+		"numSeries": 100,
+		"numChunks": 3000
+	},
+	"compaction": {
+		"level": 3,
+		"sources": [
+			"01FVJ2C1QXNNAK4X6E6PFX2AGC",
+			"01FVJ97SNA18X0HMSXZYGFSRC5",
+			"01FVKJ9P67NM1JT6RW4SHXG908",
+			"01FVKJ9PR2TRP1818Z7X5T9G0F",
+			"01FVKX053TBCFWWRATBEPPBAW0"
+		],
+		"parents": [
+			{
+				"ulid": "01FVKX05CGCMHK5AV50AZVTPPX",
+				"minTime": 1644494404262,
+				"maxTime": 1644516000000
+			},
+			{
+				"ulid": "01FVKJ9PR2TRP1818Z7X5T9G0F",
+				"minTime": 1644516000158,
+				"maxTime": 1644523200000
+			},
+			{
+				"ulid": "01FVKX053TBCFWWRATBEPPBAW0",
+				"minTime": 1644555458699,
+				"maxTime": 1644559200000
+			}
+		]
+	},
+	"version": 1
+}
