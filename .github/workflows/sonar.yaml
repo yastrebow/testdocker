@@ -1,0 +1,26 @@
+name: SonarCloud
+
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup JDK
+        uses: actions/setup-java@v1
+
+      - name: Analyze with SonarCloud
+              #       set environment variables:
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+              #       run sonar maven plugin:
+      run: mvn -B verify sonar:sonar -Dsonar.projectKey=yastrebow_testdocker -Dsonar.organization=yastrebow -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.coverage.jacoco.xmlReportPaths=./target/site/jacoco/jacoco.xml
