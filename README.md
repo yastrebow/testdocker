@@ -6,7 +6,9 @@ Project for testing monitoring with spring boot actuator, prometheus and grafana
 Components
 ----
 testdocker - simple project with one method
-
+Running
+----
+Run with docker-compose up --build from root directory
 Endpoints
 ----
 testdocker - http://localhost:8080/swagger-ui/
